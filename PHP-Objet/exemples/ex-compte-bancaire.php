@@ -23,3 +23,7 @@ echo "Solde : " . $cptCourant->getSolde() . "\n";
 // Type de compte : Courant
 // Solde : 155000000000
 
+// Bonus :
+// N'autoriser que 3 types de comptes : Courant, PEL, Livret A
+// Interdire les soldes négatifs
+// Interdire de passer des montants négatifs à crediter et debiter

@@ -11,7 +11,7 @@ $cptCourant->debiter(44 * 1000 * 1000 * 1000);
 
 echo "Propriétaire : " . $cptCourant->getProprietaire() . "\n";
 echo "Type de compte : " . $cptCourant->getType() . "\n";
-echo "Solde : " . $cptCourant->getType() . "\n";
+echo "Solde : " . $cptCourant->getSolde() . "\n";
 
 // Compléter la classe CompteBancaire tel que :
 // créer 3 propriétés $type, $proprietaire, $solde

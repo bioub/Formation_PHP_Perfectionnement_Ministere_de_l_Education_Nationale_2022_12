@@ -22,17 +22,16 @@ catch (Exception $err) {
     echo "Erreur " . $err->getMessage() . "\n";
 }
 
-// Compléter la classe CompteBancaire tel que :
-// créer 3 propriétés $type, $proprietaire, $solde
-// initialiser le solde à 0
-// créer les getters / setters pour ces 3 propriétés sauf setSolde
-// intéragir avec le solde via les méthodes crediter et debiter
-// l'exemple devra afficher :
-// Propriétaire : Elon Musk
-// Type de compte : Courant
-// Solde : 155000000000
+// Exercice Association
+// Faire évoluer le code de CompteBancaire de sorte que
+// proprietaire soit de type Personne (plutôt que string actuellement)
+// Faire évoluer cet exemple également avec un objet de type Personne
+// $proprietaire = new Personne();
+// $proprietaire->setPrenom('Elon');
+// $proprietaire->setNom('Musk');
+// ....
 
-// Bonus :
-// N'autoriser que 3 types de comptes : Courant, PEL, Livret A
-// Interdire les soldes négatifs
-// Interdire de passer des montants négatifs à crediter et debiter
+// Bonus++
+// Faire évoluer le code de Personne pour quelle puisse
+// avoir plusieurs Société
+// Donc Elon Musk : Tesla, Twitter, SpaceX...

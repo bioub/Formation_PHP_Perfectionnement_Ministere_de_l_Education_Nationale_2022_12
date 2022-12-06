@@ -3,6 +3,8 @@
 class Personne {
     protected $prenom;
     protected $nom;
+
+    /** @var Societe */
     protected $societe;
 
     public function getPrenom()
@@ -25,16 +27,22 @@ class Personne {
         $this->nom = $nom;
     }
 
-
+    /**
+     * @return Societe
+     */
     public function getSociete()
     {
         return $this->societe;
     }
 
-    public function setSociete($societe)
+    /**
+     * @param Societe $societe
+     */
+    public function setSociete(Societe $societe)
     {
         $this->societe = $societe;
     }
+
 
 
 }

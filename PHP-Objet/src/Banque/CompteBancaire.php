@@ -1,10 +1,17 @@
 <?php
 
+namespace MinEduc\Banque;
+
+use Exception;
+use MinEduc\Address\Personne;
+
 class CompteBancaire
 {
     protected $type;
-    protected $proprietaire;
     protected $solde = 0;
+
+    /** @var Personne */
+    protected $proprietaire;
 
     public function getType()
     {
@@ -21,15 +28,23 @@ class CompteBancaire
         $this->type = $type;
     }
 
+    /**
+     * @return Personne
+     */
     public function getProprietaire()
     {
         return $this->proprietaire;
     }
 
-    public function setProprietaire($proprietaire)
+    /**
+     * @param Personne $proprietaire
+     */
+    public function setProprietaire(Personne $proprietaire)
     {
         $this->proprietaire = $proprietaire;
     }
+
+
 
     public function getSolde()
     {

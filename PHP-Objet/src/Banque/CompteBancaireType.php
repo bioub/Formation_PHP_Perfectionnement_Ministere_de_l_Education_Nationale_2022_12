@@ -1,5 +1,7 @@
 <?php
 
+namespace MinEduc\Banque;
+
 class CompteBancaireType
 {
     const COURANT = 'Courant';

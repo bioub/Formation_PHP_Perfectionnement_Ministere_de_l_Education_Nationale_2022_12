@@ -2,16 +2,16 @@
 require_once __DIR__ . '/../src/Personne.php';
 require_once __DIR__ . '/../src/Societe.php';
 
-$societe = new Societe();
+$societe = new \MinEduc\Address\Societe();
 $societe->setNom('Apple');
 
-$personne = new Personne();
+$personne = new \MinEduc\Address\Personne();
 $personne->setPrenom('Steve');
 $personne->setNom('Jobs');
 
 $societe->addEmploye($personne);
 
-$personne = new Personne();
+$personne = new \MinEduc\Address\Personne();
 $personne->setPrenom('Tim');
 $personne->setNom('Cook');
 

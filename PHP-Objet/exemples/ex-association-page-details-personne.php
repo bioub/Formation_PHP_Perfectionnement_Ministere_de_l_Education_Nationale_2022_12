@@ -3,11 +3,11 @@
 require_once __DIR__ . '/../src/Personne.php';
 require_once __DIR__ . '/../src/Societe.php';
 
-$personne = new Personne();
+$personne = new \MinEduc\Address\Personne();
 $personne->setPrenom('Steve');
 $personne->setNom('Jobs');
 
-$societe = new Societe();
+$societe = new \MinEduc\Address\Societe();
 $societe->setNom('Apple');
 
 $personne->setSociete($societe); // association

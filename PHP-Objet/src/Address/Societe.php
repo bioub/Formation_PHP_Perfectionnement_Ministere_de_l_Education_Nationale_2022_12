@@ -1,5 +1,7 @@
 <?php
 
+namespace MinEduc\Address;
+
 class Societe
 {
     protected $nom;

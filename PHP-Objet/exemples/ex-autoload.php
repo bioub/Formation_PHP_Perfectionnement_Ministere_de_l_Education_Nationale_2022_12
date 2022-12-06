@@ -4,9 +4,7 @@ use MinEduc\Address\Personne;
 use MinEduc\Banque\CompteBancaire;
 use MinEduc\Banque\CompteBancaireType;
 
-require_once __DIR__ . '/../src/CompteBancaire.php';
-require_once __DIR__ . '/../src/CompteBancaireType.php';
-require_once __DIR__ . '/../src/Personne.php';
+require_once __DIR__ . '/../autoload.php';
 
 try {
     $cptCourant = new CompteBancaire();

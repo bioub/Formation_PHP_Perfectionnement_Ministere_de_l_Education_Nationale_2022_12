@@ -18,3 +18,6 @@ compareNumbers(mt_rand(0, 5), mt_rand(0, 5));
 compareNumbers(mt_rand(0, 5), mt_rand(0, 5));
 compareNumbers(mt_rand(0, 5), mt_rand(0, 5));
 compareNumbers(mt_rand(0, 5), mt_rand(0, 5));
+
+compareNumbers(nb1: 0, nb2: 10);
+compareNumbers(nb2: 10, nb1: 0);

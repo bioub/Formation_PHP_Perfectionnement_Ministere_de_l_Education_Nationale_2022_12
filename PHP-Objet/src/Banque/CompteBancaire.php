@@ -67,7 +67,7 @@ class CompteBancaire
             throw new Exception('montant doit être positif');
         }
         if ($this->solde - $montant < 0) {
-            throw new Exception('le solde doit rester positif');
+            throw new DecouvertException('le solde doit rester positif');
         }
         $this->solde -= $montant;
     }

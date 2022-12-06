@@ -22,6 +22,8 @@ try {
     echo "Propriétaire : " . $cptCourant->getProprietaire()->getPrenom() . " " . $cptCourant->getProprietaire()->getNom() . "\n";
     echo "Type de compte : " . $cptCourant->getType() . "\n";
     echo "Solde : " . $cptCourant->getSolde() . "\n";
+} catch (\MinEduc\Banque\DecouvertException $err) {
+    // TODO envoyer un email au client et au conseiller
 } catch (Exception $err) {
     // ce bloc catch intercepte toutes les Exception qui se sont produites
     // dans le bloc try directement ou indirectement (l'erreur peut être lancée dans un autre fonction

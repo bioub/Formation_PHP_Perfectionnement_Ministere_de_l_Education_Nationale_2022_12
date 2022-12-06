@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/http-client": "^6.2",
+        "psr/log": "^3.0",
+        "monolog/monolog": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MinEduc\\": "./src"
+        }
+    }
+}

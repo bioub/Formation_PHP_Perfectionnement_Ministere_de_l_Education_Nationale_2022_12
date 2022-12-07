@@ -10,3 +10,10 @@ $user = new User();
 $personne->setPrenom('Romain');
 //$personne->
 $user->setPrenom('Romain');
+
+function giveMeAPerson(Personne $personne) {
+    // $personne->
+}
+
+giveMeAPerson($personne);
+giveMeAPerson($user);

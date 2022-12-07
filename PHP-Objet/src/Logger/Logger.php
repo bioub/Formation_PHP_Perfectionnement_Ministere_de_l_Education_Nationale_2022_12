@@ -7,7 +7,7 @@ use Psr\Log\LoggerTrait;
 
 class Logger implements LoggerInterface
 {
-    use LoggerTrait;
+    use LoggerTrait; // sorte de copié collé du contenu du trait
 
     public function log($level, \Stringable|string $message, array $context = []): void
     {

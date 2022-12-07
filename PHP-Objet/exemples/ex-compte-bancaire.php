@@ -31,16 +31,24 @@ try {
     echo "Erreur " . $err->getMessage() . "\n";
 }
 
-// Exercice Association
-// Faire évoluer le code de CompteBancaire de sorte que
-// proprietaire soit de type Personne (plutôt que string actuellement)
-// Faire évoluer cet exemple également avec un objet de type Personne
-// $proprietaire = new Personne();
-// $proprietaire->setPrenom('Elon');
-// $proprietaire->setNom('Musk');
-// ....
+// Exercice Nouveautés PHP7+ et namespace (PSR4)
 
-// Bonus++
-// Faire évoluer le code de Personne pour quelle puisse
-// avoir plusieurs Société
-// Donc Elon Musk : Tesla, Twitter, SpaceX...
+// Dans les classes CompteBancaire et Personne :
+// - utiliser Typed properties pour typer les propriétés (slide 64)
+// - utiliser Scalar type hint pour typer tous les paramètres (slide 37)
+// - utiliser return type pour typer tous les types de retour (slide 41)
+
+// Dans le fichier ex-compte-bancaire :
+// Utiliser dans ce fichier Group use statement (slide 46)
+// Utiliser dans ce fichier l'autoloader de composer
+// Dans ce fichier remplacer les grands nombres par Numeric literal separator (slide 67)
+
+// Dans les Exceptions :
+// Créer un nouveau namespace (et le dossier correspondant) \MinEduc\Banque\Exception
+// et y déposer (et donc renommer son namespace) la classe DecouvertException
+// Créer sur le même modèle que DecouvertException, une classe MontantException
+// qui sera utilisé lorsque le montant passé à débiter et créditer est négatif
+// Uniquement si vous êtes en php 8.1 (à vérifier avec php -v) :
+// Remplacer la classe CompteBancaireType par un enum :
+// https://www.php.net/manual/fr/language.enumerations.backed.php
+// et remplacer l'exception dans setType par le type hinting

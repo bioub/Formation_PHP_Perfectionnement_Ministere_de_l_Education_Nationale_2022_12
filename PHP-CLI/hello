@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+function green(string $msg) {
+    return "\033[92m$msg\033[0m";
+}
+
+$name = $argv[1] ?? '';
+echo "Hello " . green($name) . "\n";

@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$climate = new \League\CLImate\CLImate();
+
+$name = $argv[1] ?? '';
+$climate->backgroundBlue()->green()->out("Hello $name\n");

@@ -8,6 +8,7 @@ $app->add(new \PhpCli\Command\AboutCommand());
 $app->add(new \PhpCli\Command\HelloCommand());
 $app->add(new \PhpCli\Command\CompareNumbersCommand());
 $app->add(new \PhpCli\Command\DebiterCommand());
+$app->add(new \PhpCli\Command\GetCoordsCommand());
 
 // Ajouter 2 commandes (créer 2 classes)
 // 1/ CompareNumbersCommand

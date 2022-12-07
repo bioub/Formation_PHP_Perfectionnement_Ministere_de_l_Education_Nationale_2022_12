@@ -6,6 +6,8 @@ $app = new \Symfony\Component\Console\Application();
 
 $app->add(new \PhpCli\Command\AboutCommand());
 $app->add(new \PhpCli\Command\HelloCommand());
+$app->add(new \PhpCli\Command\CompareNumbersCommand());
+$app->add(new \PhpCli\Command\DebiterCommand());
 
 // Ajouter 2 commandes (créer 2 classes)
 // 1/ CompareNumbersCommand
@@ -22,7 +24,7 @@ $app->add(new \PhpCli\Command\HelloCommand());
 // lui donner le nom : debiter
 // un argument : le montant à débiter (montant) -> obligatoire
 // et une option : le solde initial (solde-initial ou s) -> optionnel (défaut 0)
-// php ./hello-symfony-cli debiter 2000 --solde-initial 10000
+// php ./hello-symfony-cli debiter --solde-initial 10000 2000
 // Bonus: si le montant est négatif retourner le code 2
 // si le solde passe à découvert retourner le code 1
 // retourner 0 si tout va bien

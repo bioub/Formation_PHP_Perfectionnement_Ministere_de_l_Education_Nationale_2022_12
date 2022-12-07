@@ -1,5 +1,11 @@
 {
     "require": {
-        "league/climate": "^3.8"
+        "league/climate": "^3.8",
+        "symfony/console": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpCli\\": "./src"
+        }
     }
 }

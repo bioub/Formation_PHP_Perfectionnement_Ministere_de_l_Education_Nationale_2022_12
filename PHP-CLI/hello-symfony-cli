@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$app = new \Symfony\Component\Console\Application();
+
+$app->add(new \PhpCli\Command\AboutCommand());
+$app->add(new \PhpCli\Command\HelloCommand());
+
+// Ajouter 2 commandes (créer 2 classes)
+// 1/ CompareNumbersCommand
+// lui donner le nom : compare-numbers
+// et 2 arguments obligatoires nb1 et nb2
+// appelée comme ceci :
+// php ./hello-symfony-cli compare-numbers 14 20
+// doit afficher
+// 14 est plus petit que 20 (comme l'exercice ex1 de Rappels)
+// ou selon le cas xxxx est plus que xxx ou xxx est égal à xxx
+
+// 2/ DebiterCommand
+// vous pouvez utiliser la classe CompteBancaire si vous le souhaitez
+// lui donner le nom : debiter
+// un argument : le montant à débiter (montant) -> obligatoire
+// et une option : le solde initial (solde-initial ou s) -> optionnel (défaut 0)
+// php ./hello-symfony-cli debiter 2000 --solde-initial 10000
+// Bonus: si le montant est négatif retourner le code 2
+// si le solde passe à découvert retourner le code 1
+// retourner 0 si tout va bien
+
+$app->run();

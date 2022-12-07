@@ -1,28 +1,26 @@
 <?php
 
 use MinEduc\Address\Personne;
-use MinEduc\Banque\CompteBancaire;
-use MinEduc\Banque\CompteBancaireType;
+use MinEduc\Banque\{CompteBancaire, CompteBancaireType};
 
-require_once __DIR__ . '/../src/CompteBancaire.php';
-require_once __DIR__ . '/../src/CompteBancaireType.php';
-require_once __DIR__ . '/../src/Personne.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 try {
     $cptCourant = new CompteBancaire();
     $cptCourant->setType(CompteBancaireType::COURANT);
     $proprietaire = new Personne();
-    $proprietaire->setPrenom('Elon');
-    $proprietaire->setNom('Musk');
+    $proprietaire->setPrenom('Elon')->setNom('Musk');
     $cptCourant->setProprietaire($proprietaire);
 
-    $cptCourant->crediter(199 * 1000 * 1000 * 1000);
-    $cptCourant->debiter(44 * 1000 * 1000 * 1000);
+    $cptCourant->crediter(199_000_000_000);
+    $cptCourant->debiter(44_000_000_000);
 
     echo "Propriétaire : " . $cptCourant->getProprietaire()->getPrenom() . " " . $cptCourant->getProprietaire()->getNom() . "\n";
-    echo "Type de compte : " . $cptCourant->getType() . "\n";
+    echo "Type de compte : " . $cptCourant->getType()->value . "\n";
     echo "Solde : " . $cptCourant->getSolde() . "\n";
-} catch (\MinEduc\Banque\DecouvertException $err) {
+} catch (\MinEduc\Banque\Exception\MontantException $err) {
+    // TODO refaire la saisie avec un nombre positif
+} catch (\MinEduc\Banque\Exception\DecouvertException $err) {
     // TODO envoyer un email au client et au conseiller
 } catch (Exception $err) {
     // ce bloc catch intercepte toutes les Exception qui se sont produites

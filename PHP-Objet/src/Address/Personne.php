@@ -3,49 +3,42 @@
 namespace MinEduc\Address;
 
 class Personne {
-    protected $prenom;
-    protected $nom;
+    protected string $prenom;
+    protected string $nom;
+    protected Societe $societe;
 
-    /** @var Societe */
-    protected $societe;
-
-    public function getPrenom()
+    public function getPrenom(): string
     {
         return $this->prenom;
     }
 
-    public function setPrenom($prenom)
+    public function setPrenom(string $prenom): Personne
     {
         $this->prenom = $prenom;
+        return $this;
     }
 
-    public function getNom()
+    public function getNom(): string
     {
         return $this->nom;
     }
 
-    public function setNom($nom)
+    public function setNom(string $nom): Personne
     {
         $this->nom = $nom;
+        return $this;
     }
 
-    /**
-     * @return Societe
-     */
-    public function getSociete()
+    public function getSociete(): Societe
     {
         return $this->societe;
     }
 
-    /**
-     * @param Societe $societe
-     */
-    public function setSociete(Societe $societe)
+    public function setSociete(Societe $societe): Personne
     {
         $this->societe = $societe;
+        return $this;
     }
-
-
 
 }
 

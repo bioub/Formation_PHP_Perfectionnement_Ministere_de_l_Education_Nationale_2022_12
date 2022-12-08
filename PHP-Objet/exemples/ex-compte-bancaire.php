@@ -1,7 +1,7 @@
 <?php
 
 use MinEduc\Address\Personne;
-use MinEduc\Banque\{CompteBancaire, CompteBancaireType};
+use MinEduc\Banque\{CompteBancaire, CompteBancaireType, Exception\DecouvertException, Exception\MontantException};
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -18,9 +18,9 @@ try {
     echo "Propriétaire : " . $cptCourant->getProprietaire()->getPrenom() . " " . $cptCourant->getProprietaire()->getNom() . "\n";
     echo "Type de compte : " . $cptCourant->getType()->value . "\n";
     echo "Solde : " . $cptCourant->getSolde() . "\n";
-} catch (\MinEduc\Banque\Exception\MontantException $err) {
+} catch (MontantException $err) {
     // TODO refaire la saisie avec un nombre positif
-} catch (\MinEduc\Banque\Exception\DecouvertException $err) {
+} catch (DecouvertException $err) {
     // TODO envoyer un email au client et au conseiller
 } catch (Exception $err) {
     // ce bloc catch intercepte toutes les Exception qui se sont produites

@@ -7,7 +7,6 @@ $pdo = null;
 try {
     $pdo = new PDO($dsn, $user, $password);
 
-
     $pdo->exec("DROP DATABASE IF EXISTS address_book");
     $pdo->exec("CREATE DATABASE address_book CHARACTER SET UTF8");
     $pdo->exec("USE address_book");
@@ -31,9 +30,11 @@ try {
     SQL);
 
     $pdo->commit();
+    echo "Seed OK\n";
 }
 catch (PDOException $e) {
     echo $e->getLine() . "\n";
     echo $e->getMessage() . "\n";
     $pdo?->rollBack();
+    echo "Seed ERROR\n";
 }

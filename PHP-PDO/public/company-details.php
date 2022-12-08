@@ -5,7 +5,7 @@ $dsn = 'mysql:host=localhost;port=3306;charset=UTF8;dbname=address_book';
 $user = 'root';
 $password = ''; // par défaut XAMPP '', WAMPP 'root'
 
-$id = $_GET['id'] ?? '';
+$id = (int) $_GET['id'] ?? '';
 
 try {
     $pdo = new PDO($dsn, $user, $password);

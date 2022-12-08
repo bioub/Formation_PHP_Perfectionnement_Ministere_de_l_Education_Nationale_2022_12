@@ -13,9 +13,10 @@ try {
     $pdo->exec(<<<SQL
         CREATE TABLE `users` (
             `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-            `first_name` VARCHAR(100) NOT NULL,
-            `last_name` VARCHAR(100) NOT NULL,
-            `email` VARCHAR(255)
+            `first_name` VARCHAR(100),
+            `last_name` VARCHAR(100),
+            `email` VARCHAR(255),
+            `password` VARCHAR(255)
         )
     SQL);
 
@@ -30,11 +31,11 @@ try {
     $pdo->beginTransaction();
 
     $pdo->exec(<<<SQL
-        INSERT INTO users (first_name, last_name, email) VALUES ('Steve', 'Jobs', 'sjobs@apple.com')
+        INSERT INTO users (first_name, last_name, email, password) VALUES ('Steve', 'Jobs', 'sjobs@apple.com', '1234')
     SQL);
 
     $pdo->exec(<<<SQL
-        INSERT INTO users (first_name, last_name, email) VALUES ('Bill', 'Gates', 'bill@microsoft.com')
+        INSERT INTO users (first_name, last_name, email, password) VALUES ('Bill', 'Gates', 'bill@microsoft.com', 'ABCD')
     SQL);
 
     $pdo->exec(<<<SQL
